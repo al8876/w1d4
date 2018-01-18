@@ -1,16 +1,13 @@
 function findWaldo(arr, found) {
-  var waldoIndex = [];
-  arr.forEach(function(arr){
-    if (arr === "Waldo") {
-      waldoIndex.push(arr.indexOf(arr))
+  arr.forEach(function(item, index){
+    if (item === "Waldo") {
+      found(index);
     }
   });
-  found(waldoIndex);
-  console.log(waldoIndex);
 }
 
-function actionWhenFound(waldoIndex) {
-  console.log("Found Waldo at index " + waldoIndex + "!");
+function actionWhenFound(index) {
+  console.log("Found Waldo at index " + index + "!");
 }
 
 findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
